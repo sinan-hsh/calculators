@@ -1,0 +1,55 @@
+<form class="form-inline" th:action="@{/weight-conversing}" method="POST" xmlns:th="http://www.w3.org/1999/xhtml">
+    <fieldset>
+        <div class="form-group">
+            <div class="col-sm-1 ">
+                <input type="text" class="form-control" id="value" placeholder="Value"
+                       name="value" th:value="${value}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2 ">
+                <p>From</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3 ">
+                <select class="form-control" name="leftOperand">
+                    <option value="gram" th:selected="${leftOperand.equals('g')}">gram</option>
+                    <option value="kilogram" th:selected="${leftOperand.equals('kg')}">kilogram</option>
+                    <option value="ton" th:selected="${leftOperand.equals('t')}">ton</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2 ">
+                <p>To</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3 ">
+                <select class="form-control" name="rightOperand">
+                    <option value="gram" th:selected="${rightOperand.equals('gram')}">gram</option>
+                    <option value="kilogram" th:selected="${rightOperand.equals('kilogram')}">kilogram</option>
+                    <option value="ton" th:selected="${rightOperand.equals('ton')}">ton</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2 ">
+                <p>=</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-4 ">
+                <input type="text" class="form-control" id="result" placeholder="Result"
+                       name="result" th:value="${result}"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </div>
+    </fieldset>
+</form>
+
