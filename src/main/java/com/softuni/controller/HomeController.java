@@ -18,7 +18,7 @@ public class HomeController {
 	public String calculator(Model model){
 		model.addAttribute("operator", "+");
 		model.addAttribute("view", "views/calculatorForm");
-		return "calculator-layout";
+		return "base-layout";
 	}
 	@PostMapping("/calculator")
 	public String calculate(@RequestParam String leftOperand,
@@ -47,7 +47,7 @@ public class HomeController {
 		model.addAttribute("result", result);
 		model.addAttribute("view", "views/calculatorForm");
 
-		return "calculator-layout";
+		return "base-layout";
 	}
 
 	@GetMapping("/weight-conversing")
@@ -55,7 +55,7 @@ public class HomeController {
 		model.addAttribute("leftOperand", "gram");
 		model.addAttribute("rightOperand","gram");
 		model.addAttribute("view", "views/weightForm");
-		return "weight-layout";
+		return "base-layout";
 	}
 	@PostMapping("/weight-conversing")
 	public String weightCalculate(@RequestParam String value,
@@ -80,7 +80,7 @@ public class HomeController {
 		model.addAttribute("result", result);
 		model.addAttribute("view", "views/weightForm");
 
-		return "weight-layout";
+		return "base-layout";
 	}
 }
 
